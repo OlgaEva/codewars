@@ -17,4 +17,4 @@ function squareEveryDigit(num) {
     return new_arr.join('')
 };
 
-squareEveryDigit(234);
+// squareEveryDigit(234);
