@@ -16,10 +16,12 @@ FUNDAMENTALS STRINGS
 
 function replaceWithAlphaPosition(str){
 // Step 1: create an array with all letters of the alphabet
-        let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-// Step 2: create a dictionary with alphabet's letters as keys, and numbers representing position as values
+    let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+// Step 2: create an empty array to store the converted chars
+    let newStr = []
+// Step 3: create empty JS Object
     let alphaDic = {};
-
+// Step 4: fill Object with alphabet's letters as keys, and numbers representing position as values
     let counter = 1;
 
     for(let char of alphabet){
@@ -28,8 +30,6 @@ function replaceWithAlphaPosition(str){
         }
         counter++;
     }
-// Step 3: create an empty array to store the converted chars
-    let newStr = []
-
+// Step 5: go over the str input, and swtich to it's corresponding value in the alphaDic
 
 }
