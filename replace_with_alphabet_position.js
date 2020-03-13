@@ -20,11 +20,13 @@ function replaceWithAlphaPosition(str){
 // Step 2: create a dictionary with alphabet's letters as keys, and numbers representing position as values
     let alphaDic = {};
 
+    let counter = 1;
+
     for(let char of alphabet){
         if(!alphaDic[char]){
-            alphaDic[char] = 1;
-        }else{
+            alphaDic[char] = counter;
         }
+        counter++;
     }
 // Step 3: create an empty array to store the converted chars
     let newStr = []
