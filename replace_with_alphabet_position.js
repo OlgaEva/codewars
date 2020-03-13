@@ -15,6 +15,17 @@ FUNDAMENTALS STRINGS
 */
 
 function replaceWithAlphaPosition(){
-    // Step 1: create an array with all letters of the alphabet
+// Step 1: create an array with all letters of the alphabet
         let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+// Step 2: create a dictionary with alphabet's letters as keys, and numbers representing position as values
+    let alphaDic = {};
+
+    for(let char of alphabet){
+        if(!alphaDic[char]){
+            alphaDic[char] = 1;
+        }else{
+        }
+    }
+    return alphaDic;
+
 }
