@@ -73,7 +73,9 @@ return newArr.join(' ').toString();
 
 when I clicked attempt on CW, my function was failing 1/57 tests in the test suite which stated
 expected ' ' and received NaN; so I added an if/else statement to handle that case 
-function orderWeight(strgn){
+*/
+
+// function orderWeight(strgn){
 // if(strng == ''){
 //   return ''
 // } else {
