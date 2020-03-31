@@ -67,3 +67,55 @@ newArr.push(weightedPairs[i]["n"])
 
 return newArr.join(' ').toString();
 }
+
+
+/*
+
+when I clicked attempt on CW, my function was failing 1/57 tests in the test suite which stated
+expected ' ' and received NaN; so I added an if/else statement to handle that case 
+function orderWeight(strgn){
+// if(strng == ''){
+//   return ''
+// } else {
+//     //Step 1: convert ordered weight string into array
+//     let weightedArr = strng.split(' ');
+//     //Step 2: convert array of strings into array of numbers
+//     let newElemsArr = []
+
+//     for(let char of weightedArr){
+//         newElemsArr.push(parseInt(char))
+//     }
+//     //Step 3: find out the "weight" of each array elem & create object where keys are elems and values are their weights
+//     let weightedPairs = [];
+
+//     for(i=0; i<newElemsArr.length; i++){
+//       let obj = {};
+//       let n = "n";
+//       let w = "w";
+//       let sn = "sn";
+
+//       var num = newElemsArr[i];
+//       var sum = ('' + num).split('').reduce(function (sum, val) {
+//     return sum + +val }, 0)
+
+//       obj[n] = newElemsArr[i];
+//       obj[w] = sum;
+//       obj[sn] = newElemsArr[i].toString();
+  
+//       weightedPairs.push(obj)
+//     }
+
+//     weightedPairs.sort(function(a,b) {
+//       if(a.w < b.w || a.w == b.w && a.sn < b.sn) {
+//         return -1;
+//       }else{return 1;}
+//     })
+
+//     let newArr = []
+//     for(i=0; i<weightedPairs.length;i++){
+//       newArr.push(weightedPairs[i]["n"])
+//     }
+
+//     return newArr.join(' ').toString();
+// }
+// }
