@@ -25,88 +25,45 @@ For C: The result is freed.
 ALGORITHMS NUMBERS
 */
 
-function weightForWeight(str){
-    //Step 1: convert ordered weight string into array
-    let weightedArr = str.split(' ');
-    //Step 2: convert array of strings into array of numbers
-    let newElemsArr = []
+function orderWeight(strng) {
+  //Step 1: convert ordered weight string into array
+let weightedArr = strng.split(' ');
+//Step 2: convert array of strings into array of numbers
+let newElemsArr = []
 
-    for(let char of weightedArr){
-        newElemsArr.push(parseInt(char))
-    }
-     //Step 3: find out the "weight" of each array elem & create object where keys are elems and values are their weights
-     let weightedDic = {}
-     for(i=0; i<newElemsArr.length; i++){
-       var num = newElemsArr[i];
-       var sum = ('' + num).split('').reduce(function (sum, val) {
-     return sum + +val }, 0)
-     weightedDic[newElemsArr[i]] = sum;
-    }
-    let keys = Object.keys(weightedDic)
-    // console.log(keys)
-    let values = Object.values(weightedDic)
-    // console.log(values)
-    let sortedVals = values.sort(sortNumber);
+for(let char of weightedArr){
+  newElemsArr.push(parseInt(char))
+}
+//Step 3: find out the "weight" of each array elem & create object where keys are elems and values are their weights
+let weightedPairs = [];
 
-    function sortNumber(a,b) {
-        return a - b;
-    }
+for(i=0; i<newElemsArr.length; i++){
+ let obj = {};
+ let n = "n";
+ let w = "w";
+ let sn = "sn";
 
-    let sortedArr = []
-      for(i=0; i<sortedVals.length; i++){
-        sortedArr.push(Object.keys(weightedDic).find(key => weightedDic[key] === sortedVals[i]));
+ var num = newElemsArr[i];
+ var sum = ('' + num).split('').reduce(function (sum, val) {
+return sum + +val }, 0)
 
-      }
-      return sortedArr.join(' ').toString();
+ obj[n] = newElemsArr[i];
+ obj[w] = sum;
+ obj[sn] = newElemsArr[i].toString();
+
+weightedPairs.push(obj)
 }
 
+weightedPairs.sort(function(a,b) {
+if(a.w < b.w || a.w == b.w && a.sn < b.sn) {
+  return -1;
+}else{return 1;}
+})
 
+let newArr = []
+for(i=0; i<weightedPairs.length;i++){
+newArr.push(weightedPairs[i]["n"])
+}
 
-
-
-// function weightForWeight(str){
-//     //Step 1: convert ordered weight string into array
-//   let weightedArr = str.split(' ');
-// console.log(weightedArr)
-//     //Step 2: convert array of strings into array of numbers
-//   let newElemsArr = []
-
-//     for(let char of weightedArr){
-//         newElemsArr.push(parseInt(char))
-//     }
-// console.log(newElemsArr)
-// console.log(typeof(newElemsArr[0]))
-//     //Step 3: find out the "weight" of each array elem, create object where keys are elems and values are their weights
-//     let weightedDic = {}
-//       for(i=0; i<newElemsArr.length; i++){
-//         var num = newElemsArr[i];
-//         var sum = ('' + num).split('').reduce(function (sum, val) {
-//       return sum + +val }, 0)
-//       weightedDic[newElemsArr[i]] = sum;
-// console.log(sum)
-// console.log(weightedDic)
-
-//     //     keys[keys.length] = key;
-//     //   }
-//     // let values = []
-//     //   for(var i = 0; i < keys.length; i++ ) {
-//     //     values[values.length] = weightedDic[keys[i]];
-//       }
-//       let keys = Object.keys(weightedDic)
-//         console.log(keys)
-//       let values = Object.values(weightedDic)
-//         console.log(values)
-//       let sortedVals = values.sort(sortNumber);
-
-//       function sortNumber(a,b) {
-//    return a - b;
-//     }
-//     console.log(sortedVals)
-
-//     let sortedArr = []
-
-//       console.log(Object.keys(weightedDic).find(key => weightedDic[key] === sortedVals[0]));
-
-// }
-
-// weightForWeight("97 100 125");
+return newArr.join(' ').toString();
+}
