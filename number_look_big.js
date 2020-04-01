@@ -1,6 +1,8 @@
 /* DIRECTIONS
 
-A Narcissistic Number is a number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
+A Narcissistic Number is a number which is the sum of its own digits, each raised 
+to the power of the number of digits in a given base. In this Kata, we will restrict 
+ourselves to decimal (base 10).
 
 For example, take 153 (3 digits):
 
@@ -17,3 +19,14 @@ Error checking for text strings or other invalid inputs is not required, only va
 ALGORITHMS NUMBERS
 
 */
+
+function narcissistic(n) {
+    let stringed = n.toString();
+    let counter = 0;
+    let power = stringed.length
+    
+    for(let char of stringed){
+      counter += (parseInt(char)**power)
+    }
+    return counter == n
+  }
