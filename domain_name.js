@@ -9,3 +9,19 @@ FUNDAMENTALSPARSINGALGORITHMSSTRINGSREGULAR EXPRESSIONSDECLARATIVE PROGRAMMINGAD
 
 */
 
+function domainName(url){
+    let split = url.split('/');
+    let domain = '';
+
+    for(let elem of split){
+      let arr = elem.split('.')
+        if(arr.length >=2){
+          if(arr[0] == "www"){
+            domain = arr[1]
+          } else {
+            domain = arr[0]
+          }
+        }
+      }
+  return domain
+}
