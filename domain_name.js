@@ -21,7 +21,7 @@ function domainName(url){
           } else {
             domain = arr[0]
           }
+          return domain;
         }
       }
-  return domain
 }
